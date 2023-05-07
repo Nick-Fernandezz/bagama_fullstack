@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+
+.slider-block {
+    margin-top: 45px
+}
+
+.img-sliders {
+    
+}
+
+.img-sliders img {
+
+    width: 75%  ;
+}
+
+.products-btns {
+    margin-top: 20px;
+}
+
+.products-btns button {
+    background: 0;
+    border: 2px solid #fff;
+    border-radius: 360rem;
+    padding-top: 23px;
+    padding-bottom: 21px;
+    padding-left: 29px;
+    padding-right: 29px;
+}
+
+.products-btns button:hover {
+    background: #302e2e;
+}
+
+.progress-product {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+    color: #fff;
+}
+
+/* @media (max-width: 990px) {
+    .nav-bar {
+        width: 50vh;
+    }
+} */
+
+/* @media (max-width: 576px) {
+
+} */
