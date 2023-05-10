@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
-
+from .forms import RegisterForm
 
 # Create your views here.
 
@@ -10,6 +10,5 @@ def indexpage(request):
 
 def loginuser(request):
 
-    if request.method == 'GET':
-
-        return render(request, 'shop/loginuser.html', {'form': AuthenticationForm()}) # если метод запроса ГЕТ, то возвращаем страницу входа с созданной формой
+    if request.method.GET:
+        return ''

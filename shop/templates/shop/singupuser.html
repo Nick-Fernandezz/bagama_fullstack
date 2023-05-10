@@ -1,14 +1,64 @@
+<<<<<<< HEAD
+=======
+{% load static %}
+>>>>>>> a0358f2 (process creating loging sys)
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Регистрация</title>
 </head>
 <body>
     <form action="/" method="post">
         {{form}}
     </form>
+=======
+    <link rel="stylesheet" href="{% static 'shop/css/singupuser.css' %}">
+    <title>Регистрация</title>
+</head>
+<body>
+    <div class="main-container">
+
+        
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="menu">
+                <div class="login-btn">
+                    <a href="{% url 'loginuser' %}">Вход</a>
+                </div>
+                <div class="login-btn">
+                    <a href="{% url 'singupuser' %}">Регистрация</a>
+                </div>
+                <div class="close-btn">
+                    <a href="{% url 'indexpage' %}">
+                        <img src="{% static 'shop/images/close-nav-bar.svg' %}" width="30" height="30">
+                    </a>
+                </div>
+            </div>
+
+            {% for field in form %}
+                <div class='input-block'>
+                    {{field}}
+                    {{field.label_tag}}
+                    
+                    {% if field.errors %}
+                        <div class="error">
+                            {{field.errors}}
+                        </div>
+                    {% endif %}
+                    
+                </div>
+            {% endfor %}
+
+                
+            <button class="submit-btn" type="submit">Регистрация</button>
+            
+        </form>
+    </div>
+>>>>>>> a0358f2 (process creating loging sys)
 </body>
 </html>

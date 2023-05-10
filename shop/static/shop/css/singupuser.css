@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #1E1E1E;
+    
+}
+
+.main-container {
+
+    margin-top: 71px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+input, label {
+    color: #FFFFFF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 28px;
+}
+
+.input-block {
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+
+.input-block > input {
+    width: 500px;
+    outline: none;
+    background: #1e1e1e00;
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 27px;
+    
+}
+
+.input-block > label {
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: left center;
+    top: 50%;
+    left: 30px;
+
+    pointer-events: none;
+    transition: .3s ease-in-out;
+
+    background: #1E1E1E;
+    padding: 20px;
+    opacity: .5;
+
+}
+
+.input-block > input:focus + label, input:not(:placeholder-shown) + label{
+    top: 0;
+    transform: translateY(-50%) scale(.5) translateX(10px);
+    opacity: 1;
+}
+
+.submit-btn {
+    background-color: #FFFFFF;
+    border: 2px #1E1E1E solid;
+    border-radius: 15px;
+    padding-top: 24px;
+    padding-bottom: 28px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 23px;
+
+    color: #1E1E1E;
+    transition: .2s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #b9b9b900;
+    border: 2px #FFFFFF solid;
+    color: #fff;
+}
+
+form {
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+.menu {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.menu a {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 43px;
+
+    text-decoration: none;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login-btn:nth-child(2) a {
+    color: #FFFFFF;
+    margin-left: 65px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 20%;
+}
+
+.close-btn:hover {
+    transform: scale(1.3);
+}
