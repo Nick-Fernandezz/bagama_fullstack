@@ -10,5 +10,6 @@ def indexpage(request):
 
 def loginuser(request):
 
-    if request.method.GET:
-        return ''
+    if request.method == 'GET':
+
+        return render(request, 'shop/loginuser.html', {'form': AuthenticationForm()}) # если метод запроса ГЕТ, то возвращаем страницу входа с созданной формой
