@@ -1,0 +1,57 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}НАША КОМПАНИЯ{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'shop/css/about.css' %}">
+
+{% endblock head %}
+
+{% block content %}
+
+<div class="main-container">
+    <div class="title-block">
+        <h2 class="title">НАША КОМПАНИЯ</h2>
+    </div>
+    <div class="row about justify-content-around align-items-center">
+        <div class="col-5">
+            <p>
+                Успешно работает на рынке обработки керамогранита с 2012 года. 
+            </p>
+            <p>
+                Современная база оснащена высокоточным и технологичным 
+                итальянским оборудованием, что гарантирует высокое качество услуг. 
+            </p>
+            <p>
+                Отработанные технологии производства обеспечивают возможность 
+                делать большие объемы работ в сжатые сроки. 
+            </p>
+        </div>
+        <div class="col-4">
+            <div class="avatar-img">
+
+            </div>
+            <div class="ceo-info">
+                <h4 class="ceo-name">Долженко Джулета Юрьевна</h4>
+                <h5 class="position">директор компании</h5>
+            </div>
+        </div>
+    </div>
+    <div class="row about-footer">
+        <div class="col-2 years">
+            <h4>11</h4>
+            <h5>лет на рынке</h5>
+        </div>
+        <div class="col-2 clients">
+            <h4>2000+</h4>
+            <h5>довольных покупателей</h5>
+        </div>
+        <div class="col-2 workers">
+            <h4>18</h4>
+            <h5>сотрудников</h5>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

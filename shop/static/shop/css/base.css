@@ -1,9 +1,5 @@
 @charset "utf-8";
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("../fonts/Montserrat-VariableFont_wght.ttf");
-}
+@import url('fonts.css') all;
 
 body {
     background: #1E1E1E;;
@@ -17,8 +13,10 @@ body {
     margin-right: 1.5vw;
 }
 
-.nav-icons .col-1:hover {
+.nav-icons img:hover {
     transform:scale(1.1);
+    
+    transition: 0.1s;
 }
 
 .logo {
@@ -45,7 +43,7 @@ body {
     width: 50vh;
     height: 100%;
     right: 0;
-    background: #454545;
+    background: #282828;
 
     z-index: 99;
 
@@ -99,4 +97,39 @@ body {
 
 .nav-bar-links-items a:hover {
     color: #999999;
+}
+
+.dropdown-content button {
+    border: 0;
+    background: 0;
+    position: relative;
+    background: #42424248;
+    border-radius: 10px;
+
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+
+    padding: 10px;
+}
+
+.user {
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    
+}
+.dropdown-content {
+    /* z-index: 1; */
+    position: absolute;
+    right: 10;
+    margin-top: 10px;
+    display: none;
+
+    
+}
+
+.user:hover .dropdown-content, .dropdown-content:hover {
+    display: block;
 }

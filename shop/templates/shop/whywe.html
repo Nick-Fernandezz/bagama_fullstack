@@ -1,0 +1,66 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}Почему мы?{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'shop/css/whywe.css' %}">
+{% endblock head %}
+
+{% block content %}
+<div class="title-block">
+    <h2 class="title">ПОЧЕМУ ИМЕННО МЫ?</h2>
+</div>
+
+<div class="row points justify-content-around">
+    <div class="col-5">
+        <h4 class="point-title">Качество</h4>
+        <h5 class="point-description">
+            Высококачественный материал, который гарантирует долговечность и прочность продукции
+        </h5>
+    </div>
+    <div class="col-5">
+        <h4 class="point-title">Опыт</h4>
+        <h5 class="point-description">
+            Более 11 лет на рынке
+        </h5>
+    </div>
+    <div class="col-5">
+        <h4 class="point-title">Гарантии</h4>
+        <h5 class="point-description">
+            От 10 - 50 лет 
+        </h5>
+    </div>
+    <div class="col-5">
+        <h4 class="point-title">Скорость обслуживания</h4>
+        <h5 class="point-description">
+            Высокий уровень обслуживания и быстрое реагирование на любые вопросы 
+        </h5>
+    </div>
+    <div class="col-5">
+        <h4 class="point-title">Ассортимент</h4>
+        <h5 class="point-description">
+            Мы предлагаем широкий выбор моделей, форм и цветов
+        </h5>
+    </div>
+    <div class="col-5">
+        <h4 class="point-title">Авторский дизайн</h4>
+        <h5 class="point-description">
+            Создай свой уникальный дизайн
+        </h5>
+    </div>
+    <div class="col-5">
+        <h4 class="point-title">Акции</h4>
+        <h5 class="point-description">
+            Лояльные цены и предоставление скидок
+        </h5>
+    </div>
+    <div class="col-5">
+        <h4 class="point-title">Способы доставки</h4>
+        <h5 class="point-description">
+            Возможность доставки по Краснодару на наших автомобилях
+        </h5>
+    </div>
+</div>
+
+{% endblock %}

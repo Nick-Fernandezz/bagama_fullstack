@@ -1,0 +1,54 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}Категории{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'shop/css/categories.css' %}">
+{% endblock head %}
+
+{% block content %}
+<div class="main-container">
+    <div class="title-block">
+        <h2 class="title">КАТЕГОРИИ</h2>
+    </div>
+
+    <div class="row categories justify-content-around ">
+
+        {% for category in categories %}
+        <div class="col-3 category">
+            <div class="category-img" style="background-image: url('{{category.image.url}}'); "></div>
+            <div class="category-title">
+                <h4>{{category.title}}</h4>
+            </div>
+            <div class="category-btn">
+                <a href="#">Перейти</a>
+            </div>
+        </div>
+        {% endfor %}
+        
+        <!-- <div class="col-3 category">
+            <div class="category-img">
+
+            </div>
+            <div class="category-title">
+                <h4>МРАМОР</h4>
+            </div>
+            <div class="category-btn">
+                <a href="#">Перейти</a>
+            </div>
+        </div>
+        <div class="col-3 category">
+            <div class="category-img">
+
+            </div>
+            <div class="category-title">
+                <h4>ПРОЧЕЕ</h4>
+            </div>
+            <div class="category-btn">
+                <a href="#">Перейти</a>
+            </div>
+        </div> -->
+    </div>
+
+{% endblock %}

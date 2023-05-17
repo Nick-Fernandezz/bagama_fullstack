@@ -5,7 +5,9 @@ from django.contrib.auth import login, logout, authenticate
 from .forms import RegisterForm
 from django.db import IntegrityError
 from django.contrib.auth.models import User
-from .models import UserProfils
+from .models import UserProfils, Categories
+
+
 
 # Create your views here.
 
@@ -49,4 +51,18 @@ def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('indexpage')
-    
+
+
+def aboutpage(request):
+    return render(request, 'shop/about.html')
+
+
+def whywepage(request):
+    return render(request, 'shop/whywe.html')
+
+
+def categoriespage(request):
+
+    categories = Categories.objects.all()
+
+    return render(request, 'shop/categories.html', {'categories': categories})
