@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +17,10 @@
         <form method="post">
             {% csrf_token %}
             <div class="menu">
-                <div class="login-btn">
+                <div class="col-2 login-btn">
                     <a href="{% url 'loginuser' %}">Вход</a>
                 </div>
-                <div class="login-btn">
+                <div class="col login-btn">
                     <a href="{% url 'singupuser' %}">Регистрация</a>
                 </div>
                 <div class="close-btn">
@@ -43,7 +44,7 @@
                 </div>
             {% endfor %} -->
             
-            <div class='input-block'>
+            <div class=' input-block'>
                 <input type="text" id="id_username" name="username" placeholder=" " maxlength="50" minlength="2" required>
                 <label for="id_username">Введите логин:</label>
             </div>
@@ -59,14 +60,21 @@
                 <input type="password" name="password1" placeholder=" " required="" id="id_password1">
                 <label for="id_password1">Введите пароль:</label>
             </div>
+            <ul class="norm_password">
+                <li>Пароль не должен быть слишком похож на другую вашу личную ифнормацию </li>
+                <li>Ваш пароль должен содержать как минимум 8 символов</li>
+                <li>Пароль не должен быть простым и распространённым</li>
+                <li>Пароль не может состоять только из цифр</li>
+            </ul>
             <div class='input-block'>
                 <input type="password" name="password2" placeholder=" " required="" id="id_password2">
                 <label for="id_password2">Повторите пароль:</label>
             </div>
+ 
                 
-            <button class="submit-btn" type="submit">Регистрация</button>
-            
-        </form>
+            <button class="col-6 submit-btn" type="submit">Регистрация</button>
+        </form>       
+
     </div>
 </body>
 </html>

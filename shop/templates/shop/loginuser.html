@@ -19,10 +19,10 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="menu">
-                    <div class="login-btn">
+                    <div class="col-1 login-btn">
                         <a href="{% url 'loginuser' %}">Вход</a>
                     </div>
-                    <div class="login-btn">
+                    <div class="col login-btn">
                         <a href="{% url 'singupuser' %}">Регистрация</a>
                     </div>
                     <div class="close-btn">
