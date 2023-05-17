@@ -7,6 +7,7 @@ class UserProfils(models.Model):
 
     user = models.ForeignKey(User, verbose_name="Пользователь", on_delete=models.CASCADE)
     phone = PhoneNumberField(blank=True)
+    created_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время регистрации')
 
     class Meta():
 

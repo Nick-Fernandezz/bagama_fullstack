@@ -6,9 +6,11 @@ admin.site.site_title = 'Админ система Багама'
 admin.site.site_header = 'Админ система Багама'
 
 class ChangeUserProfild(admin.ModelAdmin):
-    list_display = ('id', 'user', 'phone')
+    # filter_vertical = ('id', 'user', 'phone', 'created_date')
+    readonly_fields = ('created_date', )
+    list_display = ('id', 'user', 'phone', 'created_date')
     list_display_links = ('id', 'user', 'phone')
-    search_fields = ('id', 'user', 'phone')
+    search_fields = ('id', 'user', 'phone', 'created_date')
 
 
 class ChangeCategories(admin.ModelAdmin):
