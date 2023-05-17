@@ -18,7 +18,7 @@ body {
 }
 
 .main-container {
-
+    
     margin-top: 71px;
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@ input, label {
 }
 
 .input-block > input {
-    width: 500px;
+    width: 100%;
     outline: none;
     background: #1e1e1e00;
     border: 1px solid #FFFFFF;
