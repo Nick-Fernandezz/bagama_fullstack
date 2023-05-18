@@ -43,3 +43,13 @@
 
     margin-bottom: 70px;
 }
+
+@media (max-width: 576px) {
+    .point-title {
+        font-size: 25px;
+    }
+    .point-description {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}

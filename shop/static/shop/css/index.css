@@ -100,12 +100,38 @@
     line-height: 24px;
     user-select: none;
 }
-/* @media (max-width: 990px) {
-    .nav-bar {
-        width: 50vh;
+/* планшеты*/
+@media (max-width: 990px) {
+
+}
+
+@media (max-width: 576px) {
+    .container-main {
+        margin-right: 4vw;
+        margin-left: 4vw;
     }
-} */
+    .title {
+        font-size: 30px;
+        margin-top: 15px;
+        line-height: 29px;
+    } 
+    .under-title {
+        font-size: 20px;
+    }  
+    .link-head {
+        justify-content: center;
+    }
+    /* .img-sliders {
 
-/* @media (max-width: 576px) {
-
-} */
+    } */
+    .slider-block {
+        margin-top: 90px;
+        width: 100%;
+    }
+    .progress-product {
+        font-size: 50px;
+    }
+    .btn-back {
+        width: 100%;
+    }
+}
