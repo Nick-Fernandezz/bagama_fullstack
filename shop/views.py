@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from .forms import RegisterForm
 from django.db import IntegrityError
 from django.contrib.auth.models import User
-from .models import UserProfils, Categories
+from .models import UserProfils, Categories, Products, ProductsImages
 
 
 
@@ -66,3 +66,28 @@ def categoriespage(request):
     categories = Categories.objects.all()
 
     return render(request, 'shop/categories.html', {'categories': categories})
+
+
+def productspage(request, category__id):
+    # category_name = Categories.objects.get(id=category__id).title
+    category_name = get_object_or_404(Categories, id = category__id).title
+    # products = Products.objects.all(category=category__id)
+    products = get_list_or_404(Products, category = category__id)
+
+    data = {
+        'category_name': category_name,
+        'products': products
+    }
+    return render(request, 'shop/products.html', context=data)
+
+
+def productpage(request, product__id):
+    print(product__id)
+    product = get_object_or_404(Products, id=product__id)
+    product_photos = get_list_or_404(ProductsImages, product_id=product.id)
+
+    return render(request, 'shop/productpage.html', context={'product': product, 'photos': product_photos})
+
+
+def page_not_found_view(request, exception):
+    return render(request, 'shop/404page.html')

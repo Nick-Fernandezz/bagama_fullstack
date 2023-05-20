@@ -5,6 +5,20 @@ from .models import *
 admin.site.site_title = 'Админ система Багама'
 admin.site.site_header = 'Админ система Багама'
 
+
+class ProductImageAdmin(admin.ModelAdmin):
+  pass
+
+
+class ProductImageInline(admin.StackedInline):
+  model = ProductsImages
+  max_num = 10
+  extra = 0
+
+
+class ProductAdmin(admin.ModelAdmin):
+  inlines = [ProductImageInline,]
+
 class ChangeUserProfild(admin.ModelAdmin):
     # filter_vertical = ('id', 'user', 'phone', 'created_date')
     readonly_fields = ('created_date', )
@@ -21,3 +35,5 @@ class ChangeCategories(admin.ModelAdmin):
 
 admin.site.register(UserProfils, ChangeUserProfild)
 admin.site.register(Categories, ChangeCategories)
+admin.site.register(Products, ProductAdmin)
+

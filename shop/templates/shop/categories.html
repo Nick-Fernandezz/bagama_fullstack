@@ -17,12 +17,12 @@
 
         {% for category in categories %}
         <div class="col-md-3 col-10 category">
-            <div class="category-img" style="background-image: url('{{category.image.url}}'); "></div>
+            <div class="category-img" style="background-image: url('{{category.image.url}}');"></div>
             <div class="category-title">
                 <h4>{{category.title}}</h4>
             </div>
             <div class="category-btn">
-                <a href="#">Перейти</a>
+                <a href="{% url 'productspage' category.id%}">Перейти</a>
             </div>
         </div>
         {% endfor %}
