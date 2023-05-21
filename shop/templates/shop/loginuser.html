@@ -18,30 +18,36 @@
 
             <form method="post">
                 {% csrf_token %}
-                <div class="menu">
-                    <div class="col-md-3 col login-btn">
-                        <a href="{% url 'loginuser' %}">Вход</a>
+                <div class="menu" style="margin-left: 40px;">
+                    <div class="col-lg-2 col-md-2 col-1 login-btn">
+                        <a style='color: #FFFFFF;' href="{% url 'loginuser' %}">Вход</a>
                     </div>
-                    <div class="col login-btn">
-                        <a href="{% url 'singupuser' %}">Регистрация</a>
+                    <div class="col-lg-2 col-md-1 col-1 login-btn" style="margin-left: 10px;">
+                        <a style='color: rgba(255, 255, 255, 0.5);' href="{% url 'singupuser' %}">Регистрация</a>
                     </div>
-                    <div class="close-btn">
+                    <div class="col-lg-1 col-md-1 col-2 close-btn" style="margin-left: 190px;">
                         <a href="{% url 'indexpage' %}">
                             <img src="{% static 'shop/images/close-nav-bar.svg' %}" width="30" height="30">
                         </a>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class='col-11 input-block'>
+                    <div class='col-md-7 col-7 input-block'>
                         {{form.username}}
                         <label for="id_username">Введите логин</label>
                     </div>
-                    <div class='col-11 input-block'>
+                    <div class="string">
+                    </div>  
+                    <div class='col-md-7 col-7 input-block'>
                         {{form.password}}
                         <label for="id_username">Введите пароль</label>
                     </div>
-                    <button class="col-md-5 col-10 submit-btn" type="submit">Вход</button>
+                    <div class="string">
+                    </div>  
+                    <button class="col-md-5 col-5 submit-btn" type="submit">Вход</button>
                 </div>
+                <div class="string">
+                </div>  
             </form>
             
         </div>

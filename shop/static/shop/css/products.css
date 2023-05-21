@@ -71,8 +71,6 @@
 
 .product-btn a {
     display: block;
-    /* padding-top: 21px;
-    padding-bottom: 29px; */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -94,6 +92,19 @@
 }
 .product-btn:hover a {
     color: #FFFFFF;
+}
+
+@media (max-width: 990px) {
+    .product-image {
+        width: 70%;
+        height: 300px;
+    }
+    .product-title h3{
+        font-size: 1vw;
+    }
+    .product-btn {
+        font-size: 1vw;
+    }
 }
 
 

@@ -14,7 +14,7 @@
 
 body {
     background: #1E1E1E;
-    
+    overflow-x: hidden;
 }
 
 .main-container {
@@ -23,6 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
+    overflow-x: hidden;
 }
 
 
@@ -114,7 +115,7 @@ form {
 }
 
 .menu {
-    margin-left: 70px;
+
     margin-bottom: 50px;
     display: flex;
     align-items: center;
@@ -135,11 +136,10 @@ form {
 
 .login-btn:nth-child(2) a {
     color: #FFFFFF;
-    margin-left: 90px;
 }
 
 .close-btn {
-    margin-left: 20px;
+    margin-left: 120px;
 }
 
 .close-btn:hover {
@@ -156,6 +156,11 @@ form {
     color: #FFFFFF;
 }
 
+.string {
+    width: -100px;
+}
+
+
 @media (max-width: 576px) {
     .norm_password {
         font-size: 15px;
@@ -163,5 +168,8 @@ form {
     }
     .login-btn:nth-child(2) a {
         margin-left: 55px;
+    }
+    .submit-btn {
+        margin-bottom: 7vw;
     }
 }

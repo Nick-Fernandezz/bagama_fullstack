@@ -52,3 +52,12 @@ input {
     align-items: center;
 }
 
+.string {
+    width: -100px;
+}
+
+/* @media (max-width: 576px) {
+    body {
+        justify-content: center;
+    }
+} */
