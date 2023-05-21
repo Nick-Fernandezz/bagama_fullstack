@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
@@ -31,3 +33,35 @@ class Categories(models.Model):
     def __str__(self):
         return self.title
     
+class Products(models.Model):
+
+    title = models.CharField(max_length=100, verbose_name='Имя товара')
+    description = models.TextField('Описание товара')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена', default=0.00)
+    category = models.ForeignKey(Categories, on_delete=models.CASCADE, verbose_name='Категория товара')
+    # images = models.ForeignKey(ProductsImages, on_delete=models.CASCADE)
+    preview = models.ImageField('Превью товара', upload_to='product/previews/%Y/%Y-%m-%d-%H-%M-%S/')
+    created_date = models.DateTimeField(auto_now=True, verbose_name='Время создания')
+    updated = models.DateTimeField(auto_now=True, verbose_name='Время последнего обновления')
+    class Meta():
+
+        verbose_name = 'продукт'
+        verbose_name_plural = 'Продукты'
+
+    def __str__(self):
+        return self.title
+
+
+class ProductsImages(models.Model):
+
+    product = models.ForeignKey(Products, verbose_name='Товар', on_delete=models.CASCADE,
+                                related_name="images")
+    image = models.ImageField('Изображение', upload_to='product/images/%Y/%Y-%m-%d-%H-%M-%S/')
+
+    class Meta():
+
+        verbose_name = 'изображение продукта'
+        verbose_name_plural = 'Изображения продуктов'
+
+    def __str__(self):
+        return str(self.product)

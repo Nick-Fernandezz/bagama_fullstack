@@ -1,0 +1,51 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}{{category_name}}{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'shop/css/products.css' %}">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+{% endblock head %}
+
+{% block content %}
+<div class="main-container">
+    <div class="title">
+        <h2>{{category_name}}</h2>
+    </div>
+
+    <div class="products">
+        <div class="row justify-content-around ">
+            {% for product in products %}
+                <div class="col-12 col-md-5 product-block">
+                    <div class="row ">
+                        <div class="col-6 product-image">
+                            <div class="preview" style="background-image: url('{{product.preview.url}}') ;">
+                            </div>
+                        </div>
+                        <div class="col-6 product-info">
+                            <div class="product-title">
+                                <h3>{{product.title}}</h3>
+                            </div>
+                            <div class="product-price">
+
+                            </div>
+                            <div class="product-btn">
+                                <a href="#">
+                                    Заказать
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="{% static 'shop/js/slider.js' %}"></script>
+{% endblock content %}

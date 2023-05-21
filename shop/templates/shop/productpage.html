@@ -1,0 +1,61 @@
+
+
+{% extends 'shop/base.html' %}
+{% load replace_n %}
+{% load static %}
+
+{% block title %}Багама{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'shop/css/productpage.css' %}">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+{% endblock head %}
+
+{% block content %}
+
+<div class="main-container">
+    {% comment %} <div class="title">
+        <h3>Товар</h3>
+    </div> {% endcomment %}
+    <div class="product">
+        <div class="row justify-content-between">
+            <div class="col-4">
+                <div class="product-img">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            {% for photo in photos %}
+                                <div class="swiper-slide">
+                                    <div class="prod" style="background-image: url('{{photo.image.url}}');"></div>
+                                </div>
+                            {% endfor %}                     
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h2 class="product-title">{{product.title}}</h2>
+                    <h3 class="product-price">{{product.price}} ₽</h3>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="product-description">
+                    <h5>Коротко о товаре:</h5>
+                    <p>
+                        {{product.description|replace_n|safe}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="{% static 'shop/js/slider.js' %}"></script>
+{% endblock content %}
