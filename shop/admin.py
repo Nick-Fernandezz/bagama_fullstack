@@ -32,7 +32,7 @@ class ChangeCategories(admin.ModelAdmin):
     list_display_links = ('id', 'title')
     search_fields = ('id', 'title')
 
-
+admin.site.register(Basket)
 admin.site.register(UserProfils, ChangeUserProfild)
 admin.site.register(Categories, ChangeCategories)
 admin.site.register(Products, ProductAdmin)

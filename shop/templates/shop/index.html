@@ -3,6 +3,9 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'shop/css/index.css' %}">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 {% endblock head %}
 
 {% block content %}
@@ -29,28 +32,37 @@
                 </div>
                 <div class="col-5 slider-block">
                     <div class="img-sliders">
-                        <a href="#">
-                            <img src="{% static 'shop/images/product_img.png' %}">
-                        </a>
+
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                {% for product in top_products %}
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'productpage' product.id %}">
+                                            <div class="prod" style="background-image: url('{{product.preview.url}}');"></div>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
                     </div>
-                    <div class="row align-items-center justify-content-center text-center products-btns">
+                    <div class="row align-items-center justify-content-center products-btns">
                         <div class="col-3 col-md-3">
-                            <button type="button">
-                                <img class="btn-back" src="{% static 'shop/images/back.svg' %}">
-                            </button>
+                            <div class="button-back" style="background-image: url('{% static 'shop/images/back.svg' %}');">
+                                <!-- <img class="btn-back" src="{% static 'shop/images/back.svg' %}"> -->
+                            </div>
                         </div>
                         <div class="col-md-4 col-4">
-                            <span class="progress-product">1 / 15</span>
+                            <div class="progress-product"></div>
                         </div>
                         <div class="col-3 col-md-3">
-                            <button type="button">
-                                <img class="btn-back" src="{% static 'shop/images/next.svg' %}">
-                            </button>
+                            <div class="button-next" style="background-image: url('{% static 'shop/images/next.svg' %}');">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="{% static 'shop/js/index_slider.js' %}"></script>
 {% endblock content %}
         
