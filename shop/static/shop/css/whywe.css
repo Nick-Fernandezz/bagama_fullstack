@@ -52,4 +52,7 @@
         font-size: 20px;
         line-height: 25px;
     }
+    body {
+        margin: 2vw;
+    }
 }

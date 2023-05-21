@@ -17,13 +17,13 @@
         <form method="post">
             {% csrf_token %}
             <div class="menu">
-                <div class="col-2 login-btn">
+                <div class="col-md-1 col login-btn">
                     <a href="{% url 'loginuser' %}">Вход</a>
                 </div>
-                <div class="col login-btn">
+                <div class="col-md-3 col login-btn">
                     <a href="{% url 'singupuser' %}">Регистрация</a>
                 </div>
-                <div class="close-btn">
+                <div class="col-md-1 col close-btn">
                     <a href="{% url 'indexpage' %}">
                         <img src="{% static 'shop/images/close-nav-bar.svg' %}" width="30" height="30">
                     </a>
@@ -43,36 +43,36 @@
                     
                 </div>
             {% endfor %} -->
-            
-            <div class=' input-block'>
-                <input type="text" id="id_username" name="username" placeholder=" " maxlength="50" minlength="2" required>
-                <label for="id_username">Введите логин:</label>
-            </div>
-            <div class='input-block'>
-                <input type="tel" id="id_phonenumber" name="phonenumber" placeholder=" " required>
-                <label for="id_phonenumber">Введите телефон:</label>
-            </div>
-            <div class='input-block'>
-                <input type="email" id="id_email" name="email" placeholder=" " maxlength="100" minlength="2" required>
-                <label for="id_email">Введите e-mail:</label>
-            </div>
-            <div class='input-block'>
-                <input type="password" name="password1" placeholder=" " required="" id="id_password1">
-                <label for="id_password1">Введите пароль:</label>
-            </div>
-            <ul class="norm_password">
-                <li>Пароль не должен быть слишком похож на другую вашу личную ифнормацию </li>
-                <li>Ваш пароль должен содержать как минимум 8 символов</li>
-                <li>Пароль не должен быть простым и распространённым</li>
-                <li>Пароль не может состоять только из цифр</li>
-            </ul>
-            <div class='input-block'>
-                <input type="password" name="password2" placeholder=" " required="" id="id_password2">
-                <label for="id_password2">Повторите пароль:</label>
-            </div>
- 
+            <div class="row justify-content-center">
+                <div class='col-md-7 col-11 input-block'>
+                    <input type="text" id="id_username" name="username" placeholder=" " maxlength="50" minlength="2" required>
+                    <label for="id_username">Введите логин:</label>
+                </div>
+                <div class='col-md-7 col-11 input-block'>
+                    <input type="tel" id="id_phonenumber" name="phonenumber" placeholder=" " required>
+                    <label for="id_phonenumber">Введите телефон:</label>
+                </div>
+                <div class='col-md-7 col-11 input-block'>
+                    <input type="email" id="id_email" name="email" placeholder=" " maxlength="100" minlength="2" required>
+                    <label for="id_email">Введите e-mail:</label>
+                </div>
+                <div class='col-md-7 col-11 input-block'>
+                    <input type="password" name="password1" placeholder=" " required="" id="id_password1">
+                    <label for="id_password1">Введите пароль:</label>
+                </div>
+                <ul class="col-md-7 col-11 norm_password">
+                    <li>Пароль не должен быть слишком похож на другую вашу личную ифнормацию </li>
+                    <li>Ваш пароль должен содержать как минимум 8 символов</li>
+                    <li>Пароль не должен быть простым и распространённым</li>
+                    <li>Пароль не может состоять только из цифр</li>
+                </ul>
+                <div class='col-md-7 col-11 input-block'>
+                    <input type="password" name="password2" placeholder=" " required="" id="id_password2">
+                    <label for="id_password2">Повторите пароль:</label>
+                </div>
+            </div>                
                 
-            <button class="col-6 submit-btn" type="submit">Регистрация</button>
+            <button class="col-md-4 col-6 submit-btn" type="submit">Регистрация</button>
         </form>       
 
     </div>

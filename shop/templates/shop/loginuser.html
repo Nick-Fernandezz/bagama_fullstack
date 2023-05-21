@@ -19,7 +19,7 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="menu">
-                    <div class="col-1 login-btn">
+                    <div class="col-md-3 col login-btn">
                         <a href="{% url 'loginuser' %}">Вход</a>
                     </div>
                     <div class="col login-btn">
@@ -31,16 +31,17 @@
                         </a>
                     </div>
                 </div>
-
-                    <div class='input-block'>
+                <div class="row justify-content-center">
+                    <div class='col-11 input-block'>
                         {{form.username}}
                         <label for="id_username">Введите логин</label>
                     </div>
-                    <div class='input-block'>
+                    <div class='col-11 input-block'>
                         {{form.password}}
                         <label for="id_username">Введите пароль</label>
                     </div>
-                <button class="submit-btn" type="submit">Вход</button>
+                    <button class="col-md-5 col-10 submit-btn" type="submit">Вход</button>
+                </div>
             </form>
             
         </div>

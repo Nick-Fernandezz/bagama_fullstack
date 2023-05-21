@@ -100,8 +100,16 @@
     line-height: 24px;
     user-select: none;
 }
-/* планшеты*/
+
 @media (max-width: 990px) {
+    .title {
+        font-size: 20px;
+        line-height: 42px;
+        margin-top: 50px;
+    }
+    .progress-product {
+        font-size: 25px;
+    }
 
 }
 
@@ -121,9 +129,6 @@
     .link-head {
         justify-content: center;
     }
-    /* .img-sliders {
-
-    } */
     .slider-block {
         margin-top: 90px;
         width: 100%;
