@@ -21,16 +21,22 @@
     </div> {% endcomment %}
     <div class="product">
         <div class="row justify-content-between">
-            <div class="col-5">
+            <div class="col-12 col-md-5" style="margin-bottom: 40px;">
                 <div class="product-img">
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            {% for photo in photos %}
+                            {% if photos %}
+                                {% for photo in photos %}
+                                    <div class="swiper-slide">
+                                        <div class="prod" style="background-image: url('{{photo.image.url}}');"></div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
                                 <div class="swiper-slide">
-                                    <div class="prod" style="background-image: url('{{photo.image.url}}');"></div>
+                                    <div class="prod" style="background-image: url('{{product.preview.url}}');"></div>
                                 </div>
-                            {% endfor %}                     
+                            {% endif %}                     
                         </div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
@@ -41,17 +47,22 @@
                     <h2 class="product-title">{{product.title}}</h2>
                     <h3 class="product-price">{{product.price}} ₽</h3>
                 </div>
+                <div class="add-to-bascket-btn">
+                    <a href="">Добавить в корзину</a>
+                </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4" style="margin-bottom: 40px;">
                 <div class="product-description">
                     <h5>Коротко о товаре:</h5>
                     <p>
                         {{product.description|replace_n|safe}}
                     </p>
                 </div>
+                <div class="order-btn">
+                    <a href="">Заказать</a>
+                </div>
             </div>
         </div>
-
     </div>
 </div>
 
