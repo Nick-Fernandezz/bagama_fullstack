@@ -19,9 +19,9 @@
     <div class="products">
         <div class="row justify-content-around ">
             {% for product in products %}
-                <div class="col-12 col-md-5 product-block">
+                <div class="col-lg-6 col-md-6 product-block">
                     <div class="row ">
-                        <div class="col-6 product-image">
+                        <div class="col-lg-6 col-md-3 col-10 product-image">
                             <div class="preview" style="background-image: url('{{product.preview.url}}') ;">
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <div class="product-price">
 
                             </div>
-                            <div class="product-btn">
+                            <div class="col-lg-2 col-md-1 col-10 product-btn">
                                 <a href="{% url 'productpage' product.id %}">
                                     Заказать
                                 </a>
